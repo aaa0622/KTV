@@ -17,22 +17,7 @@ namespace ex3_8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Menu());
-        }
-    }
-    public class Sql
-    {
-        public Sql()
-        {
-
-        }
-        public System.Data.DataTable query()
-        {
-            return new System.Data.DataTable();
-        }
-        public int exec()
-        {
-            return 0;
+            Application.Run(new Screen());
         }
     }
 }
