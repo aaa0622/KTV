@@ -1,0 +1,18 @@
+c:\users\仕\documents\visual studio 2015\Projects\ex3-8\ex3-8\bin\Debug\ex3-8.exe.config
+c:\users\仕\documents\visual studio 2015\Projects\ex3-8\ex3-8\obj\Debug\ex3_8.Form1.resources
+c:\users\仕\documents\visual studio 2015\Projects\ex3-8\ex3-8\obj\Debug\ex3_8.Properties.Resources.resources
+c:\users\仕\documents\visual studio 2015\Projects\ex3-8\ex3-8\obj\Debug\ex3-8.csproj.GenerateResource.Cache
+c:\users\仕\documents\visual studio 2015\Projects\ex3-8\ex3-8\bin\Debug\ex3-8.exe
+c:\users\仕\documents\visual studio 2015\Projects\ex3-8\ex3-8\bin\Debug\ex3-8.pdb
+c:\users\仕\documents\visual studio 2015\Projects\ex3-8\ex3-8\obj\Debug\ex3-8.exe
+c:\users\仕\documents\visual studio 2015\Projects\ex3-8\ex3-8\obj\Debug\ex3-8.pdb
+C:\Users\alan8\Desktop\ex3-8\ex3-8\obj\Debug\ex3-8.exe
+C:\Users\alan8\Desktop\ex3-8\ex3-8\obj\Debug\ex3-8.pdb
+C:\Users\alan8\Desktop\ex3-8\ex3-8\bin\Debug\ex3-8.exe.config
+C:\Users\alan8\Desktop\ex3-8\ex3-8\bin\Debug\ex3-8.exe
+C:\Users\alan8\Desktop\ex3-8\ex3-8\bin\Debug\ex3-8.pdb
+C:\Users\alan8\Desktop\ex3-8\ex3-8\obj\Debug\ex3-8.csprojAssemblyReference.cache
+C:\Users\alan8\Desktop\ex3-8\ex3-8\obj\Debug\ex3_8.Form1.resources
+C:\Users\alan8\Desktop\ex3-8\ex3-8\obj\Debug\ex3_8.Properties.Resources.resources
+C:\Users\alan8\Desktop\ex3-8\ex3-8\obj\Debug\ex3-8.csproj.GenerateResource.cache
+C:\Users\alan8\Desktop\ex3-8\ex3-8\obj\Debug\ex3-8.csproj.CoreCompileInputs.cache
