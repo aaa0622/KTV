@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using CefSharp;
+using CefSharp.WinForms;
 
 namespace ex3_8
 {
     public partial class SQLForm : Form
     {
         private Sql sql;
+        private Screen s;
         public SQLForm()
         {
             InitializeComponent();
@@ -27,6 +30,19 @@ namespace ex3_8
         {
             //sql.exec("select * from Test");
             sql.testModifyDt((DataTable)dataGridView1.DataSource);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            s = new Screen();
+
+            // Show the settings form
+            s.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            s.browser.ExecuteScriptAsync("player.playVideo()");
         }
     }
 }

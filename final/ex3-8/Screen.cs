@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CefSharp;
+using CefSharp.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +16,23 @@ namespace ex3_8
 {
     public partial class Screen : Form
     {
+        public ChromiumWebBrowser browser;
         public Screen()
         {
             InitializeComponent();
+
+            CefSharpSettings.LegacyJavascriptBindingEnabled = true;
+            Cef.Initialize(new CefSettings());
+            browser = new ChromiumWebBrowser("about:blank");
+            browser.Dock = DockStyle.Fill;
+            string html = null;
+            string file = "ex3_8.assets.youtube-player.html";
+            using (var s = Assembly.GetExecutingAssembly().GetManifestResourceStream(file))
+            using (var r = new StreamReader(s))
+                html = r.ReadToEnd();
+            browser.LoadHtml(html);
+            Controls.Add(browser);
+
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -25,24 +41,7 @@ namespace ex3_8
 
         private void Screen_Load(object sender, EventArgs e)
         {
-           
-            string html = null;
-            using (var s = Assembly.GetExecutingAssembly()
-                .GetManifestResourceStream("ex3_8.assets.youtube-player.html"))
-            using (var r = new StreamReader(s))
-                html = r.ReadToEnd();
-
-            var embed = @"
-<html>
-<head>
-<meta http-equiv='X-UA-Compatible' content='IE=Edge'/>
-</head>
-<body style='height: 100vh; margin: 0px; overflow:hidden'>
-<iframe style='width: 100%; height: 100%; margin: 0px' src='https://k8188219.github.io/CS151webPractice/' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
-</body>
-</html>
-";
-            // this.webBrowser1.DocumentText = html;
+            
             //webBrowser1.DocumentText = html;
             //Console.WriteLine(html);
         }
