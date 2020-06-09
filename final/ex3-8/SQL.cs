@@ -25,7 +25,10 @@ namespace ex3_8
             MySqlTransaction transaction = null;
             try
             {
-                
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
                 transaction = conn.BeginTransaction();
 
                 Console.WriteLine("已經建立連線");
@@ -41,6 +44,7 @@ namespace ex3_8
             {
                 Console.WriteLine(ex.Message);
                 transaction.Rollback();
+                conn.Close();
             }
             finally
             {
@@ -59,7 +63,10 @@ namespace ex3_8
 
             try
             {
-                //conn.Open();
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
                 transaction = conn.BeginTransaction();
 
                 Console.WriteLine("已經建立連線");
@@ -75,6 +82,7 @@ namespace ex3_8
             {
                 Console.WriteLine(ex.Message);
                 transaction.Rollback();
+                conn.Close();
             }
             finally
             {
