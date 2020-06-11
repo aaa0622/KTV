@@ -1,101 +1,105 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="icon" href="favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="favicon.ico" />
 
-  <title>YouTube Player</title>
-  
-  <style>
-body {
-  margin: 0px;
-  height: 100vh;
-  // overflow: hidden;
-}
-iframe {
-width: 100%;
-height: 100%;
-}
-  </style>
+    <title>YouTube Player</title>
+
+    <style>
+        body {
+            margin: 0px;
+            height: 100vh;
+            // overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
-  <div style="position: fixed; width: 100%; height: 100%"></div>
-  <div id="player"></div>
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script>
-var playList = [
-    {Id: "4iVW7OhZ0p8", playTime: [57,60]},
-    {Id: "MJnzEa0FSKk", playTime: [79,83]},
-    {Id: "7NN4RlKspW0", playTime: [76,80]}
-]
-var player;
-var currentPlay = 0;
-function onYouTubeIframeAPIReady(){
-    player = new YT.Player("player",
-        {
-            height: "",
-            width: "",
-            videoId: playList[currentPlay].Id,
-            playerVars: {
-                autoplay: 0,
-                controls: 0,
-                start: playList[currentPlay].playTime[0],
-                end: playList[currentPlay].playTime[1],
-                showinfo: 0,
-                rel: 0,
-                iv_load_policy: 3
+    <div style="position: fixed; width: 100%; height: 100%"></div>
+    <div id="player"></div>
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script>
+        if (window.CefSharp)
+            CefSharp.BindObjectAsync("playerCallback")
+        var player;
+        var currentPlay = {
+            id: "",
+            name: ""
+        };
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player("player",
+                {
+                    height: "",
+                    width: "",
+                    videoId: "",
+                    playerVars: {
+                        autoplay: 0,
+                        controls: 0,
+                        showinfo: 0,
+                        rel: 0,
+                        iv_load_policy: 3
+                    },
+                    events: {
+                        onReady: onPlayerReady,
+                        onStateChange: onPlayerStateChange
+                    }
+                }
+            )
+        }
+        function onPlayerReady(event) {
+        }
+        function getNextVideo() {
+            playerCallback.getNextVideo(function (id, name) {
+                currentPlay.id = id
+                currentPlay.name = name
+                player.loadVideoById({
+                    videoId: id,
+                    startSeconds: 0,
+                    endSeconds: 10,
+                    suggestedQuality: "large"
+                })
             },
-            events: {
-                onReady: onPlayerReady,
-                onStateChange: onPlayerStateChange
+                function () {
+                    currentPlay.id = ""
+                    currentPlay.name = ""
+                    player.cueVideoById({
+                        videoId: "",
+                        suggestedQuality: "large"
+                    })
+                })
+        }
+        function setCurrentPlayName() {
+            playerCallback.setCurrentPlayName(currentPlay.name)
+        }
+        function onPlayerStateChange(event) {
+            if (event.data == 0 && player.getCurrentTime() != 0) {
+                getNextVideo();
+            }
+            setCurrentPlayName();
+        }
+        function addNewVideo() {
+            if (player.getPlayerState() == 5) {
+                getNextVideo();
             }
         }
-    )
-}
-function onPlayerReady(event){
-    $("#playButton").click(function(){
-        player.playVideo();
-    })
-}
-function onPlayerStateChange(event){
-    if(Math.floor(player.getCurrentTime()) == playList[currentPlay].playTime[1]){
-        if(currentPlay < playList.length-1){
-            currentPlay++;
-            player.loadVideoById({
-                videoId: playList[currentPlay].Id,
-                startSeconds: playList[currentPlay].playTime[0],
-                endSeconds: playList[currentPlay].playTime[1],
-                suggestedQuality: "large"
-            })
-        }else{
-            currentPlay = 0
-            player.cueVideoById({
-                videoId: playList[currentPlay].Id,
-                startSeconds: playList[currentPlay].playTime[0],
-                endSeconds: playList[currentPlay].playTime[1],
-                suggestedQuality: "large"
-            })
-        }
-    }
-    if(player.getVideoLoadedFraction() > 0){
-        $("h2").text(player.getVideoData().title)
-    }
-}
-$(function(){
-})
-  </script>
+    </script>
 
-  <script src="http://www.youtube.com/iframe_api"></script>
+    <script src="http://www.youtube.com/iframe_api"></script>
 </body>
 
 </html>

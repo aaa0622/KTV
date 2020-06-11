@@ -17,7 +17,7 @@ namespace ex3_8
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BoxMenu());
+            Application.Run(new Menu());
         }
     }
 }

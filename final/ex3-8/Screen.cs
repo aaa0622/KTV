@@ -1,4 +1,5 @@
 ﻿using CefSharp;
+using CefSharp.Enums;
 using CefSharp.WinForms;
 using System;
 using System.Collections.Generic;
@@ -16,13 +17,29 @@ namespace ex3_8
 {
     public partial class Screen : Form
     {
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x0112) // WM_SYSCOMMAND
+            {
+                // Check your window state here
+                if (m.WParam == new IntPtr(0xF030)) // Maximize event - SC_MAXIMIZE from Winuser.h
+                {
+                    this.FormBorderStyle = FormBorderStyle.None;
+                }
+                if (m.WParam == new IntPtr(0xF120)) // Restore event - SC_RESTORE from Winuser.h
+                {
+                    this.FormBorderStyle = FormBorderStyle.FixedSingle;
+                }
+
+                
+            }
+            base.WndProc(ref m);
+        }
         public ChromiumWebBrowser browser;
         public Screen()
         {
             InitializeComponent();
-
-            CefSharpSettings.LegacyJavascriptBindingEnabled = true;
-            Cef.Initialize(new CefSettings());
+            
             browser = new ChromiumWebBrowser("about:blank");
             browser.Dock = DockStyle.Fill;
             string html = null;
@@ -35,15 +52,14 @@ namespace ex3_8
 
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-        }
-
         private void Screen_Load(object sender, EventArgs e)
         {
             
-            //webBrowser1.DocumentText = html;
-            //Console.WriteLine(html);
+        }
+
+        private void Screen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }
