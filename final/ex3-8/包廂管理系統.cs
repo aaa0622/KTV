@@ -15,6 +15,7 @@ namespace ex3_8
     public partial class BoxMenu : Form
     {
         private Sql sql;
+        private DataTable box;
         public BoxMenu()
         {
             InitializeComponent();
@@ -22,11 +23,12 @@ namespace ex3_8
             sql = new Sql();
             //.btnCreateTB();
             dataGridView1.DataSource = sql.query("update Box_Data SET 包廂狀態 = '2'  where unix_timestamp(離場時間) < unix_timestamp(sysdate()); select * from Box_Data");
+            addTime();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DataTable box = checkBoxStatus();
+            box = checkBoxStatus();
             if (box.Rows.Count > 0)
             {
                 textBox9.Text = box.Rows[0][0].ToString();
@@ -64,8 +66,6 @@ namespace ex3_8
 
         private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            button1.Text = dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            
             string message = "是否確定預約該包廂";
             string caption = "預約包廂";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -108,10 +108,9 @@ namespace ex3_8
 
         private void modifyBoxStatus(object sender, EventArgs e)
         {
-            int count = sql.exec("update Box_Data SET  包廂人數 = '" + textBox8.Text + "', 時數 = '" + textBox6.Text + "' where 包廂編號 = '" + textBox9.Text + "'");
-            if(count > 0)
+            if (int.Parse(textBox6.Text) <= int.Parse(box.Rows[0][6].ToString()))
             {
-                string message = "修改成功";
+                string message = "修改失敗，修改時數需要填入比原本大的值";
                 string caption = "修改包廂狀態";
                 MessageBoxButtons buttons = MessageBoxButtons.OK;
                 DialogResult result;
@@ -121,13 +120,42 @@ namespace ex3_8
             }
             else
             {
-                string message = "修改失敗";
-                string caption = "修改包廂狀態";
-                MessageBoxButtons buttons = MessageBoxButtons.OK;
-                DialogResult result;
+                int count = sql.exec("update Box_Data SET  包廂人數 = '" + textBox8.Text + "', 時數 = '" + textBox6.Text + "', 離場時間 = DATE_ADD('" + textBox7.Text + "',INTERVAL " + textBox6.Text + " HOUR) where 包廂編號 = '" + textBox9.Text + "'");
+                if (count > 0)
+                {
+                    sql.exec("update Box_Data SET 是否加時 = False where 包廂編號 = '" + textBox9.Text + "'");
+                    string message = "修改成功";
+                    string caption = "修改包廂狀態";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
 
-                // Displays the MessageBox.
-                result = MessageBox.Show(message, caption, buttons);
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                    addTime();
+                }
+                else
+                {
+                    string message = "修改失敗";
+                    string caption = "修改包廂狀態";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result;
+
+                    // Displays the MessageBox.
+                    result = MessageBox.Show(message, caption, buttons);
+                }
+            }
+        }
+        private void addTime()
+        {
+            DataTable table = sql.query("update Box_Data SET 包廂狀態 = '2'  where unix_timestamp(離場時間) < unix_timestamp(sysdate()); select 包廂編號 from Box_Data where 包廂狀態 = '1' and 是否加時 = True ;");
+            //dataGridView1.DataSource = table;
+            int number = table.Rows.Count;
+            label10.Text = "需加時包廂：";
+            for (int i = 0; i < number; i++)
+            {
+                if (i != 0)
+                    label10.Text += '、';
+                label10.Text += table.Rows[i][0];
             }
         }
     }
