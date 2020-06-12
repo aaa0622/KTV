@@ -108,14 +108,27 @@ namespace ex3_8
 
         private void modifyBoxStatus(object sender, EventArgs e)
         {
-            sql.exec("update Box_Data SET  包廂人數 = '" + textBox8.Text + "', 時數 = '" + textBox6.Text + "' where 包廂編號 = '" + textBox9.Text + "'");
-            string message = "修改成功";
-            string caption = "修改包廂狀態";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
+            int count = sql.exec("update Box_Data SET  包廂人數 = '" + textBox8.Text + "', 時數 = '" + textBox6.Text + "' where 包廂編號 = '" + textBox9.Text + "'");
+            if(count > 0)
+            {
+                string message = "修改成功";
+                string caption = "修改包廂狀態";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
 
-            // Displays the MessageBox.
-            result = MessageBox.Show(message, caption, buttons);
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
+            else
+            {
+                string message = "修改失敗";
+                string caption = "修改包廂狀態";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+            }
         }
     }
 }
