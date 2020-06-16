@@ -34,10 +34,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.新增歌曲ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.輸入密碼ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.新增歌曲ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.刪除歌曲ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.包廂管理系統ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.刪除歌曲ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查詢包廂狀態ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button4 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -83,7 +83,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.新增歌曲ToolStripMenuItem,
-            this.刪除歌曲ToolStripMenuItem});
+            this.查詢包廂狀態ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(577, 24);
@@ -95,41 +95,49 @@
             this.新增歌曲ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.輸入密碼ToolStripMenuItem,
             this.新增歌曲ToolStripMenuItem1,
-            this.刪除歌曲ToolStripMenuItem1,
-            this.包廂管理系統ToolStripMenuItem});
+            this.刪除歌曲ToolStripMenuItem1});
             this.新增歌曲ToolStripMenuItem.Name = "新增歌曲ToolStripMenuItem";
             this.新增歌曲ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.新增歌曲ToolStripMenuItem.Text = "服務人員系統";
             // 
             // 輸入密碼ToolStripMenuItem
             // 
+            this.輸入密碼ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1});
             this.輸入密碼ToolStripMenuItem.Name = "輸入密碼ToolStripMenuItem";
-            this.輸入密碼ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.輸入密碼ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.輸入密碼ToolStripMenuItem.Text = "輸入密碼";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.AccessibleDescription = "";
+            this.toolStripTextBox1.MaxLength = 20;
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
             // 
             // 新增歌曲ToolStripMenuItem1
             // 
+            this.新增歌曲ToolStripMenuItem1.Enabled = false;
             this.新增歌曲ToolStripMenuItem1.Name = "新增歌曲ToolStripMenuItem1";
-            this.新增歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
+            this.新增歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.新增歌曲ToolStripMenuItem1.Text = "新增歌曲";
+            this.新增歌曲ToolStripMenuItem1.Click += new System.EventHandler(this.新增歌曲ToolStripMenuItem1_Click);
             // 
             // 刪除歌曲ToolStripMenuItem1
             // 
+            this.刪除歌曲ToolStripMenuItem1.Enabled = false;
             this.刪除歌曲ToolStripMenuItem1.Name = "刪除歌曲ToolStripMenuItem1";
-            this.刪除歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
+            this.刪除歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.刪除歌曲ToolStripMenuItem1.Text = "刪除歌曲";
+            this.刪除歌曲ToolStripMenuItem1.Click += new System.EventHandler(this.刪除歌曲ToolStripMenuItem1_Click);
             // 
-            // 包廂管理系統ToolStripMenuItem
+            // 查詢包廂狀態ToolStripMenuItem
             // 
-            this.包廂管理系統ToolStripMenuItem.Name = "包廂管理系統ToolStripMenuItem";
-            this.包廂管理系統ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.包廂管理系統ToolStripMenuItem.Text = "包廂管理系統";
-            // 
-            // 刪除歌曲ToolStripMenuItem
-            // 
-            this.刪除歌曲ToolStripMenuItem.Name = "刪除歌曲ToolStripMenuItem";
-            this.刪除歌曲ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
-            this.刪除歌曲ToolStripMenuItem.Text = "查詢包廂狀態";
+            this.查詢包廂狀態ToolStripMenuItem.Name = "查詢包廂狀態ToolStripMenuItem";
+            this.查詢包廂狀態ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.查詢包廂狀態ToolStripMenuItem.Text = "查詢包廂狀態";
+            this.查詢包廂狀態ToolStripMenuItem.Click += new System.EventHandler(this.查詢包廂狀態ToolStripMenuItem_Click);
             // 
             // button4
             // 
@@ -196,6 +204,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -270,7 +279,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 新增歌曲ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 刪除歌曲ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 查詢包廂狀態ToolStripMenuItem;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button7;
@@ -279,12 +288,12 @@
         private System.Windows.Forms.ToolStripMenuItem 新增歌曲ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 輸入密碼ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 刪除歌曲ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 包廂管理系統ToolStripMenuItem;
         private System.Windows.Forms.Button pauseBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }
 

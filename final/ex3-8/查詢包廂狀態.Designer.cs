@@ -171,6 +171,7 @@
             this.Controls.Add(this.label1);
             this.Name = "查詢包廂狀態";
             this.Text = "包廂管理系統 - 查詢包廂狀態";
+            this.Load += new System.EventHandler(this.查詢包廂狀態_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

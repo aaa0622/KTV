@@ -18,6 +18,7 @@ namespace ex3_8
             string connectionString = "server=qf5dic2wzyjf1x5x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;port=3306;user=hyd7ksnut6l7zu0x;password=p687r5v5xnk9enjb; database=m2mqm08xoxfdrvky;";
             conn = new MySqlConnection(connectionString);
             conn.Open();
+            Console.WriteLine("已經建立連線");
         }
         public DataTable query(string sql)
         {
@@ -28,10 +29,10 @@ namespace ex3_8
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
+                    Console.WriteLine("已經建立連線");
                 }
                 transaction = conn.BeginTransaction();
 
-                Console.WriteLine("已經建立連線");
                 //在這裡使用程式碼對資料庫進行增刪查改
                 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
@@ -66,10 +67,9 @@ namespace ex3_8
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
+                    Console.WriteLine("已經建立連線");
                 }
                 transaction = conn.BeginTransaction();
-
-                Console.WriteLine("已經建立連線");
 
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
