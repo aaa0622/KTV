@@ -31,6 +31,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.customInstaller1 = new MySql.Data.MySqlClient.CustomInstaller();
-            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -108,6 +108,15 @@
             this.tabPage1.Text = "修改包廂狀態";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(23, 235);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 12);
+            this.label10.TabIndex = 28;
+            this.label10.Text = "label10";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -116,6 +125,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(326, 67);
             this.dataGridView1.TabIndex = 27;
+            this.dataGridView1.Visible = false;
             // 
             // button2
             // 
@@ -311,15 +321,6 @@
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 14;
             this.label1.Text = "人數：";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 235);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 12);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "label10";
             // 
             // BoxMenu
             // 

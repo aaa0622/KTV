@@ -37,6 +37,7 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.新增歌曲ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.刪除歌曲ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.包廂管理系統ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查詢包廂狀態ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button4 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -95,7 +96,8 @@
             this.新增歌曲ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.輸入密碼ToolStripMenuItem,
             this.新增歌曲ToolStripMenuItem1,
-            this.刪除歌曲ToolStripMenuItem1});
+            this.刪除歌曲ToolStripMenuItem1,
+            this.包廂管理系統ToolStripMenuItem});
             this.新增歌曲ToolStripMenuItem.Name = "新增歌曲ToolStripMenuItem";
             this.新增歌曲ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.新增歌曲ToolStripMenuItem.Text = "服務人員系統";
@@ -105,7 +107,7 @@
             this.輸入密碼ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1});
             this.輸入密碼ToolStripMenuItem.Name = "輸入密碼ToolStripMenuItem";
-            this.輸入密碼ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.輸入密碼ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.輸入密碼ToolStripMenuItem.Text = "輸入密碼";
             // 
             // toolStripTextBox1
@@ -120,7 +122,7 @@
             // 
             this.新增歌曲ToolStripMenuItem1.Enabled = false;
             this.新增歌曲ToolStripMenuItem1.Name = "新增歌曲ToolStripMenuItem1";
-            this.新增歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.新增歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.新增歌曲ToolStripMenuItem1.Text = "新增歌曲";
             this.新增歌曲ToolStripMenuItem1.Click += new System.EventHandler(this.新增歌曲ToolStripMenuItem1_Click);
             // 
@@ -128,9 +130,17 @@
             // 
             this.刪除歌曲ToolStripMenuItem1.Enabled = false;
             this.刪除歌曲ToolStripMenuItem1.Name = "刪除歌曲ToolStripMenuItem1";
-            this.刪除歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.刪除歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.刪除歌曲ToolStripMenuItem1.Text = "刪除歌曲";
             this.刪除歌曲ToolStripMenuItem1.Click += new System.EventHandler(this.刪除歌曲ToolStripMenuItem1_Click);
+            // 
+            // 包廂管理系統ToolStripMenuItem
+            // 
+            this.包廂管理系統ToolStripMenuItem.Enabled = false;
+            this.包廂管理系統ToolStripMenuItem.Name = "包廂管理系統ToolStripMenuItem";
+            this.包廂管理系統ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.包廂管理系統ToolStripMenuItem.Text = "包廂管理系統";
+            this.包廂管理系統ToolStripMenuItem.Click += new System.EventHandler(this.包廂管理系統ToolStripMenuItem_Click);
             // 
             // 查詢包廂狀態ToolStripMenuItem
             // 
@@ -294,6 +304,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem 包廂管理系統ToolStripMenuItem;
     }
 }
 

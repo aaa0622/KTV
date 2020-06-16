@@ -151,6 +151,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(574, 66);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.Visible = false;
             // 
             // 查詢包廂狀態
             // 

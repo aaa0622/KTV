@@ -106,6 +106,7 @@ namespace ex3_8
             {
                 新增歌曲ToolStripMenuItem1.Enabled = true;
                 刪除歌曲ToolStripMenuItem1.Enabled = true;
+                包廂管理系統ToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -194,6 +195,12 @@ namespace ex3_8
                     fs.Close();
             }
             return dt;
+        }
+
+        private void 包廂管理系統ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BoxMenu box = new BoxMenu();
+            box.Show();
         }
     }
     public class PlayerCallback
