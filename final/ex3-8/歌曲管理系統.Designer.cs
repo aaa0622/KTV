@@ -122,7 +122,7 @@
             this.輸入密碼ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1});
             this.輸入密碼ToolStripMenuItem.Name = "輸入密碼ToolStripMenuItem";
-            this.輸入密碼ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.輸入密碼ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.輸入密碼ToolStripMenuItem.Text = "輸入密碼";
             // 
             // toolStripTextBox1
@@ -135,7 +135,7 @@
             // 
             this.新增歌曲ToolStripMenuItem1.Enabled = false;
             this.新增歌曲ToolStripMenuItem1.Name = "新增歌曲ToolStripMenuItem1";
-            this.新增歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
+            this.新增歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.新增歌曲ToolStripMenuItem1.Text = "新增歌曲";
             this.新增歌曲ToolStripMenuItem1.Click += new System.EventHandler(this.新增歌曲ToolStripMenuItem1_Click);
             // 
@@ -143,7 +143,7 @@
             // 
             this.刪除歌曲ToolStripMenuItem1.Enabled = false;
             this.刪除歌曲ToolStripMenuItem1.Name = "刪除歌曲ToolStripMenuItem1";
-            this.刪除歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
+            this.刪除歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.刪除歌曲ToolStripMenuItem1.Text = "刪除歌曲";
             this.刪除歌曲ToolStripMenuItem1.Click += new System.EventHandler(this.刪除歌曲ToolStripMenuItem1_Click);
             // 
@@ -151,8 +151,9 @@
             // 
             this.包廂管理系統ToolStripMenuItem.Enabled = false;
             this.包廂管理系統ToolStripMenuItem.Name = "包廂管理系統ToolStripMenuItem";
-            this.包廂管理系統ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.包廂管理系統ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.包廂管理系統ToolStripMenuItem.Text = "包廂管理系統";
+            this.包廂管理系統ToolStripMenuItem.Click += new System.EventHandler(this.包廂管理系統ToolStripMenuItem_Click);
             // 
             // 刪除歌曲ToolStripMenuItem
             // 
@@ -265,6 +266,7 @@
             this.button5.TabIndex = 14;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // listBox2
