@@ -64,25 +64,26 @@ namespace ex3_8
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            button5.Visible = false;
             DataRow dr1 = dtall.NewRow();
             dr1["name"] = "全放空";
             dr1["singer"] = "文慧如";
             dr1["id"] = "MJnzEa0FSKk";
             dtall.Rows.Add(dr1);
-            /*DataRow dr2 = dtall.NewRow();
-            dr2["name"] = "少年";
-            dr2["singer"] = "夢然";
-            dr2["id"] = "MYviK2-Mk-8";
-            dtall.Rows.Add(dr2);*/
+            DataRow dr2 = dtall.NewRow();
+            dr2["name"] = "Mojito";
+            dr2["singer"] = "周杰倫";
+            dr2["id"] = "-biOGdYiF-I";
+            dtall.Rows.Add(dr2);
             DataRow dr3 = dtall.NewRow();
             dr3["name"] = "晚安";
             dr3["singer"] = "顏人中";
             dr3["id"] = "FcyP7sIeWaE";
             dtall.Rows.Add(dr3);
             DataRow dr4 = dtall.NewRow();
-            dr4["name"] = "我很快樂";
-            dr4["singer"] = "周興哲";
-            dr4["id"] = "Ezd_DLawfHI";
+            dr4["name"] = "與我無關";
+            dr4["singer"] = "阿冗";
+            dr4["id"] = "8tuzFSXeKI0";
             dtall.Rows.Add(dr4);
             DataRow dr5 = dtall.NewRow();
             dr5["name"] = "最後我們沒在一起";
@@ -115,10 +116,33 @@ namespace ex3_8
             dr10["id"] = "6NydAkAavMM";
             dtall.Rows.Add(dr10);
             DataRow dr11 = dtall.NewRow();
-            dr11["name"] = "我是真的愛過你";
-            dr11["singer"] = "劉增瞳";
-            dr11["id"] = "hWwhuvlMhmI";
+            dr11["name"] = "答案";
+            dr11["singer"] = "楊坤";
+            dr11["id"] = "WJtkWWCrsqQ";
             dtall.Rows.Add(dr11);
+            DataRow dr12 = dtall.NewRow();
+            dr12["name"] = "太陽";
+            dr12["singer"] = "邱振哲";
+            dr12["id"] = "7vlVjfMl_Nk";
+            dtall.Rows.Add(dr12);
+            DataRow dr13 = dtall.NewRow();
+            dr13["name"] = "告白氣球";
+            dr13["singer"] = "周杰倫";
+            dr13["id"] = "bu7nU9Mhpyo";
+            dtall.Rows.Add(dr13);
+            DataRow dr14 = dtall.NewRow();
+            dr14["name"] = "派對動物";
+            dr14["singer"] = "五月天";
+            dr14["id"] = "-UIBTTzZdfc";
+            dtall.Rows.Add(dr14);
+            DataRow dr15 = dtall.NewRow();
+            dr15["name"] = "醉赤壁";
+            dr15["singer"] = "林俊傑";
+            dr15["id"] = "1fgmcZ3VLMc";
+            dtall.Rows.Add(dr15);
+
+
+
             updateDtall();
 
         }
@@ -174,67 +198,7 @@ namespace ex3_8
 
         private void button5_Click(object sender, EventArgs e)
         {
-            /*
-            DataRow dr1 = dtall.NewRow();
-            dr1["name"] = "全放空";
-            dr1["singer"] = "文慧如";
-            dr1["id"] = "MJnzEa0FSKk";
-            dtall.Rows.Add(dr1);
-            DataRow dr2 = dtall.NewRow();
-            dr2["name"] = "少年";
-            dr2["singer"] = "夢然";
-            dr2["id"] = "LGzDEu7Sh5g";
-            dtall.Rows.Add(dr2);
-            DataRow dr3 = dtall.NewRow();
-            dr3["name"] = "晚安";
-            dr3["singer"] = "顏人中";
-            dr3["id"] = "FcyP7sIeWaE";
-            dtall.Rows.Add(dr3);
-            DataRow dr4 = dtall.NewRow();
-            dr4["name"] = "我很快樂";
-            dr4["singer"] = "周興哲";
-            dr4["id"] = "Ezd_DLawfHI";
-            dtall.Rows.Add(dr4);
-            DataRow dr5 = dtall.NewRow();
-            dr5["name"] = "最後我們沒在一起";
-            dr5["singer"] = "白小白";
-            dr5["id"] = "nFAvalt2lsA";
-            dtall.Rows.Add(dr5);
-            DataRow dr6 = dtall.NewRow();
-            dr6["name"] = "世間美好與你環環相扣";
-            dr6["singer"] = "柏松";
-            dr6["id"] = "Kca3ndEpG0s";
-            dtall.Rows.Add(dr6);
-            DataRow dr7 = dtall.NewRow();
-            dr7["name"] = "懸日";
-            dr7["singer"] = "田馥甄";
-            dr7["id"] = "Nf1C1fSJG_8";
-            dtall.Rows.Add(dr7);
-            DataRow dr8 = dtall.NewRow();
-            dr8["name"] = "80000(想你想你想我)";
-            dr8["singer"] = "PRC巴音汗";
-            dr8["id"] = "osD5siLanLU";
-            dtall.Rows.Add(dr8);
-            DataRow dr9 = dtall.NewRow();
-            dr9["name"] = "山楂樹之戀";
-            dr9["singer"] = "程佳佳";
-            dr9["id"] = "IFMcyb4yxBc";
-            dtall.Rows.Add(dr9);
-            DataRow dr10 = dtall.NewRow();
-            dr10["name"] = "這一生關於你的風景";
-            dr10["singer"] = "隔壁老樊";
-            dr10["id"] = "6NydAkAavMM";
-            dtall.Rows.Add(dr10);
-            DataRow dr11 = dtall.NewRow();
-            dr11["name"] = "我是真的愛過你";
-            dr11["singer"] = "劉增瞳";
-            dr11["id"] = "hWwhuvlMhmI";
-            dtall.Rows.Add(dr11);
-            updateDtall();
 
-            return;
-
-            */
         }
 
         private void 新增歌曲ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -339,6 +303,20 @@ namespace ex3_8
                 dt.Rows.Add(dr1);
                 comboBox1.Items.Clear();
             }
+            //歌手推薦
+            if (button6.Text == "查看歌曲")
+            {
+                string temp = comboBox1.Text;
+                comboBox1.Items.Clear();
+                for (int i = 0; i < dtall.Rows.Count; i++)
+                {
+                    if ( dtall.Rows[i]["singer"].ToString() == temp)//查詢條件
+                    {
+                        comboBox1.Items.Add(dtall.Rows[i]["name"] + "-" + dtall.Rows[i]["singer"]);
+                    }
+                }
+                button6.Text = "確認點播";
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -411,14 +389,48 @@ namespace ex3_8
             label6.BringToFront();
             //comboBox1.Items.Add("少年-夢然");
             comboBox1.Items.Add("晚安-顏人中");
-            comboBox1.Items.Add("我很快樂-周興哲");
+            //comboBox1.Items.Add("我很快樂-周興哲");
             comboBox1.Items.Add("最後我們沒在一起-白小白");
             comboBox1.Items.Add("世間美好與你環環相扣-柏松");
             comboBox1.Items.Add("懸日-田馥甄");
             comboBox1.Items.Add("80000(想你想你想我)-PRC巴音汗");
             comboBox1.Items.Add("山楂樹之戀-程佳佳");
             comboBox1.Items.Add("這一生關於你的風景-隔壁老樊");
-            comboBox1.Items.Add("我是真的愛過你-劉增瞳");
+            //comboBox1.Items.Add("我是真的愛過你-劉增瞳");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label6.Text = "熱門歌曲";
+            button6.Text = "確認點播";
+            button6.Visible = true;
+            button8.Visible = true;
+            listBox3.Visible = true;
+            label6.Visible = true;
+            comboBox1.Visible = true;
+            comboBox1.BringToFront();
+            label6.BringToFront();
+            comboBox1.Items.Add("Mojito-周杰倫");
+            comboBox1.Items.Add("與我無關-阿冗");
+            comboBox1.Items.Add("答案-楊坤");
+            comboBox1.Items.Add("太陽-邱振哲");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label6.Text = "歌星推薦";
+            button6.Text = "查看歌曲";
+            button6.Visible = true;
+            button8.Visible = true;
+            listBox3.Visible = true;
+            label6.Visible = true;
+            comboBox1.Visible = true;
+            comboBox1.BringToFront();
+            label6.BringToFront();
+            comboBox1.Items.Add("周杰倫");
+            comboBox1.Items.Add("田馥甄");
+            comboBox1.Items.Add("五月天");
+            comboBox1.Items.Add("林俊傑");
         }
     }
     public class PlayerCallback
