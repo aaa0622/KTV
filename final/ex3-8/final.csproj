@@ -133,6 +133,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,12 +157,6 @@
     </Compile>
     <Compile Include="包廂管理系統.Designer.cs">
       <DependentUpon>包廂管理系統.cs</DependentUpon>
-    </Compile>
-    <Compile Include="刪除歌曲.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="刪除歌曲.Designer.cs">
-      <DependentUpon>刪除歌曲.cs</DependentUpon>
     </Compile>
     <Compile Include="查詢包廂狀態.cs">
       <SubType>Form</SubType>
@@ -178,6 +178,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screen.resx">
       <DependentUpon>Screen.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,9 +189,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="包廂管理系統.resx">
       <DependentUpon>包廂管理系統.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="刪除歌曲.resx">
-      <DependentUpon>刪除歌曲.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="查詢包廂狀態.resx">
       <DependentUpon>查詢包廂狀態.cs</DependentUpon>
