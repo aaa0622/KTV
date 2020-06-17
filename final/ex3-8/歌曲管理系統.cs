@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,16 +15,18 @@ namespace ex3_8
     public partial class Menu : Form
     {
         private Screen screen;
+        private Sql sql;
+        private string boxNum;
         public DataTable dt;
         public DataTable dtall;
-        //public DataTable dtd;
 
         public string currentPlayName;
         public Menu()
         {
             InitializeComponent();
+            boxNum = "001";
+            sql = new Sql();
             dtall = new DataTable();
-            //dtd = new DataTable();
             screen = new Screen();
             screen.Show();
             MethodInvoker miUpdateDt = new MethodInvoker(updateDt);
@@ -119,7 +122,21 @@ namespace ex3_8
             updateDtall();
 
         }
-       
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (sender.ToString().GetHashCode() == 1793703675) // 123456
+            {
+                新增歌曲ToolStripMenuItem1.Enabled = true;
+                刪除歌曲ToolStripMenuItem1.Enabled = true;
+                包廂管理系統ToolStripMenuItem.Enabled = true;
+            }
+        }
+        private void 查詢包廂狀態ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            查詢包廂狀態 box = new 查詢包廂狀態(ref sql, boxNum);
+            box.Show();
+        }
+        
 
         private void nextBtn_Click(object sender, EventArgs e)
         {

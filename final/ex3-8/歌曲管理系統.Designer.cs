@@ -60,6 +60,7 @@
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -117,28 +118,33 @@
             // 
             // 輸入密碼ToolStripMenuItem
             // 
+            this.輸入密碼ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1});
             this.輸入密碼ToolStripMenuItem.Name = "輸入密碼ToolStripMenuItem";
-            this.輸入密碼ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.輸入密碼ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.輸入密碼ToolStripMenuItem.Text = "輸入密碼";
             // 
             // 新增歌曲ToolStripMenuItem1
             // 
+            this.新增歌曲ToolStripMenuItem1.Enabled = false;
             this.新增歌曲ToolStripMenuItem1.Name = "新增歌曲ToolStripMenuItem1";
-            this.新增歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
+            this.新增歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.新增歌曲ToolStripMenuItem1.Text = "新增歌曲";
             this.新增歌曲ToolStripMenuItem1.Click += new System.EventHandler(this.新增歌曲ToolStripMenuItem1_Click);
             // 
             // 刪除歌曲ToolStripMenuItem1
             // 
+            this.刪除歌曲ToolStripMenuItem1.Enabled = false;
             this.刪除歌曲ToolStripMenuItem1.Name = "刪除歌曲ToolStripMenuItem1";
-            this.刪除歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
+            this.刪除歌曲ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.刪除歌曲ToolStripMenuItem1.Text = "刪除歌曲";
             this.刪除歌曲ToolStripMenuItem1.Click += new System.EventHandler(this.刪除歌曲ToolStripMenuItem1_Click);
             // 
             // 包廂管理系統ToolStripMenuItem
             // 
+            this.包廂管理系統ToolStripMenuItem.Enabled = false;
             this.包廂管理系統ToolStripMenuItem.Name = "包廂管理系統ToolStripMenuItem";
-            this.包廂管理系統ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.包廂管理系統ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.包廂管理系統ToolStripMenuItem.Text = "包廂管理系統";
             // 
             // 刪除歌曲ToolStripMenuItem
@@ -146,6 +152,7 @@
             this.刪除歌曲ToolStripMenuItem.Name = "刪除歌曲ToolStripMenuItem";
             this.刪除歌曲ToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.刪除歌曲ToolStripMenuItem.Text = "查詢包廂狀態";
+            this.刪除歌曲ToolStripMenuItem.Click += new System.EventHandler(this.查詢包廂狀態ToolStripMenuItem_Click);
             // 
             // button4
             // 
@@ -378,6 +385,12 @@
             this.comboBox1.TabIndex = 26;
             this.comboBox1.Visible = false;
             // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -451,6 +464,7 @@
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }
 
