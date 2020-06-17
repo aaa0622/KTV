@@ -361,6 +361,7 @@ namespace ex3_8
         private void button1_Click(object sender, EventArgs e)
         {
             button6.Text = "查詢歌曲";
+            label6.Text = "查詢歌曲";
             label3.Visible = true;
             label4.Visible = true;
             label5.Visible = true;
