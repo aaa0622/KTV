@@ -160,7 +160,11 @@ namespace ex3_8
             查詢包廂狀態 box = new 查詢包廂狀態(ref sql, boxNum);
             box.Show();
         }
-        
+        private void 包廂管理系統ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BoxMenu box = new BoxMenu();
+            box.Show();
+        }
 
         private void nextBtn_Click(object sender, EventArgs e)
         {

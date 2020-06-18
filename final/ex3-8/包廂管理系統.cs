@@ -99,7 +99,7 @@ namespace ex3_8
         }
         private bool reservationBox(DataGridViewCellEventArgs e) // 預約包廂功能
         {
-            int count = sql.exec("update Box_Data SET 包廂狀態 = '1' , 包廂人數 = '" + textBox1.Text + "', 入場時間 = '" + textBox3.Text + "', 離場時間 = DATE_ADD('" + textBox3.Text + "',INTERVAL " + textBox4.Text + " HOUR)  where 包廂編號 = " + dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            int count = sql.exec("update Box_Data SET 包廂狀態 = '1' , 包廂人數 = '" + textBox1.Text + "', 入場時間 = '" + textBox3.Text + "', 離場時間 = DATE_ADD('" + textBox3.Text + "',INTERVAL " + textBox4.Text + " HOUR) ,時數 = '"+ textBox4.Text + "' where 包廂編號 = " + dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
             if (count > 0)
                 return true;
             else
