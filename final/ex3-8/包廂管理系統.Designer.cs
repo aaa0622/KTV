@@ -123,9 +123,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(326, 67);
+            this.dataGridView1.Size = new System.Drawing.Size(326, 74);
             this.dataGridView1.TabIndex = 27;
-            this.dataGridView1.Visible = false;
             // 
             // button2
             // 
@@ -212,7 +211,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 83);
+            this.label5.Location = new System.Drawing.Point(43, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 14;
@@ -246,7 +245,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(284, 231);
             this.dataGridView2.TabIndex = 24;
-            this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
+            this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
             // 
             // textBox4
             // 

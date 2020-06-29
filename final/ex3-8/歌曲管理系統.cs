@@ -152,7 +152,6 @@ namespace ex3_8
             {
                 新增歌曲ToolStripMenuItem1.Enabled = true;
                 刪除歌曲ToolStripMenuItem1.Enabled = true;
-                包廂管理系統ToolStripMenuItem.Enabled = true;
             }
         }
         private void 查詢包廂狀態ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -436,6 +435,12 @@ namespace ex3_8
             comboBox1.Items.Add("田馥甄");
             comboBox1.Items.Add("五月天");
             comboBox1.Items.Add("林俊傑");
+        }
+
+        private void 包廂管理系統ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BoxMenu box = new BoxMenu();
+            box.Show();
         }
     }
     public class PlayerCallback

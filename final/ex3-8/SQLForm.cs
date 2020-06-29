@@ -23,7 +23,7 @@ namespace ex3_8
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = sql.query("select * from Test");
+            dataGridView1.DataSource = sql.exec("update Box_Data SET 包廂狀態 = '1' , 包廂人數 = '1', 入場時間 = '2020/6/10 14:10', 離場時間 = DATE_ADD('2020/6/10 14:10',INTERVAL 1 HOUR)  where 包廂編號 = '003'");
         }
 
         private void button2_Click(object sender, EventArgs e)

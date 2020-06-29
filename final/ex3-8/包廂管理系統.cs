@@ -16,13 +16,14 @@ namespace ex3_8
     {
         private Sql sql;
         private DataTable box;
+        string a;
         public BoxMenu()
         {
             InitializeComponent();
 
             sql = new Sql();
             //.btnCreateTB();
-            dataGridView1.DataSource = sql.query("update Box_Data SET 包廂狀態 = '2'  where unix_timestamp(離場時間) < unix_timestamp(sysdate()); select * from Box_Data");
+            dataGridView1.DataSource = sql.query("update Box_Data SET 包廂狀態 = '2'  where unix_timestamp(離場時間) < unix_timestamp(sysdate()); select *, DATE_FORMAT(入場時間,'%Y-%m-%d %T')  as 入場2  from Box_Data");
             addTime();
         }
 
@@ -37,6 +38,7 @@ namespace ex3_8
                 textBox7.Text = box.Rows[0][4].ToString();
                 textBox7.ReadOnly = true;
                 textBox6.Text = box.Rows[0][6].ToString();
+                a = box.Rows[0][8].ToString();
                 //dataGridView1.DataSource = box;
             }
             else
@@ -54,7 +56,7 @@ namespace ex3_8
 
         private DataTable checkBoxStatus() // 查詢包廂狀態
         {
-            DataTable box = sql.query("update Box_Data SET 包廂狀態 = '2'  where unix_timestamp(離場時間) < unix_timestamp(sysdate()); select * from Box_Data where 包廂編號 = '" + textBox5.Text + "' and 包廂狀態 = '1'");
+            DataTable box = sql.query("update Box_Data SET 包廂狀態 = '2'  where unix_timestamp(離場時間) < unix_timestamp(sysdate()); select *, DATE_FORMAT(入場時間,'%Y-%m-%d %T')  as 入場2  from Box_Data where 包廂編號 = '" + textBox5.Text + "' and 包廂狀態 = '1'");
             return box;
 
         }
@@ -99,7 +101,7 @@ namespace ex3_8
         }
         private bool reservationBox(DataGridViewCellEventArgs e) // 預約包廂功能
         {
-            int count = sql.exec("update Box_Data SET 包廂狀態 = '1' , 包廂人數 = '" + textBox1.Text + "', 入場時間 = '" + textBox3.Text + "', 離場時間 = DATE_ADD('" + textBox3.Text + "',INTERVAL " + textBox4.Text + " HOUR) ,時數 = '"+ textBox4.Text + "' where 包廂編號 = " + dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            int count = sql.exec("update Box_Data SET 包廂狀態 = '1' , 包廂人數 = '" + textBox1.Text + "', 入場時間 = '" + textBox3.Text + "', 離場時間 = DATE_ADD('" + textBox3.Text + "',INTERVAL " + textBox4.Text + " HOUR) ,時數 = '" + textBox4.Text + "' where 包廂編號 = " + dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
             if (count > 0)
                 return true;
             else
@@ -120,7 +122,7 @@ namespace ex3_8
             }
             else
             {
-                int count = sql.exec("update Box_Data SET  包廂人數 = '" + textBox8.Text + "', 時數 = '" + textBox6.Text + "', 離場時間 = DATE_ADD('" + textBox7.Text + "',INTERVAL " + textBox6.Text + " HOUR) where 包廂編號 = '" + textBox9.Text + "'");
+                int count = sql.exec("update Box_Data SET  包廂人數 = '" + textBox8.Text + "', 時數 = '" + textBox6.Text + "', 離場時間 = DATE_ADD('" + a + "',INTERVAL '" + textBox6.Text + "' HOUR) where 包廂編號 = '" + textBox9.Text + "'");
                 if (count > 0)
                 {
                     sql.exec("update Box_Data SET 是否加時 = False where 包廂編號 = '" + textBox9.Text + "'");
